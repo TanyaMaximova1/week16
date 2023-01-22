@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+}
+
+h2,
+h3 {
+    color: rgb(255, 255, 255);
+}
+
+.container__comments {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    max-height: 70%;
+    background-color: pink;
+    padding: 20px;
+}
+
+.container__chat {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    max-height: 40%;
+    background-color: palevioletred;
+    padding: 20px;
+}
+
+.container__comments_fio,
+.container__comments_img,
+.container__comments_comm,
+.container__chat_result,
+.container__yourName {
+    margin: 10px;
+    border: none;
+    height: 50px;
+
+}
+
+.container__comments_button {
+    border: none;
+    margin: 10px;
+    height: 30px;
+}
+
+.container__chat_img {
+    max-width: 80%;
+    padding: 20px;
+}

@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -15,18 +14,27 @@
     <div class="container">
         <section class="container__comments">
             <h2>Оставьте ваш комментарий</h2>
+            <div>
+                <h3>Показать имя в комментарии?</h3>
+                <input type="radio" name="check" id="yes" /><span>Да</span><br />
+                <input type="radio" name="check" id="no" /><span>Нет</span>
+            </div>
             <input type="text" placeholder="Введите ФИО" class="container__comments_fio" id="fio">
             <input type=" text" placeholder="Вставьте ссылку на ваш аватар" class="container__comments_img"
                 id="img_link">
             <textarea placeholder="Оставьте комментарий" class="container__comments_comm" id="comment"></textarea>
             <button class="container__comments_button" onclick="replaceName()">Отправить</button>
+            <button class="container__comments_button" onclick="clean()">Отчистить</button>
         </section>
         <section class="container__chat">
             <h2>Чат</h2>
-            <h3>Ваше имя: </h3>
-            <input class="container__yourName" id="yourName"></input>
-            <h3>Ваш аватар: </h3>
-            <img class="container__chat_img" id="img">
+            <div class="container__chat_name_and_img">
+                <!-- <h3>Ваш аватар: </h3> -->
+                <img class="container__chat_img" id="img">
+                <input class="container__yourName" id="yourName"></input>
+                <p class="date_comment" id="date_comment"></p>
+                <!-- <h3>Ваше имя: </h3> -->
+            </div>
             <h3>Ваш комментарий: </h3>
             <textarea placeholder="Здесь будет ваш комментарий" class="container__chat_result"
                 id="cleanCcomment"></textarea>
@@ -38,6 +46,7 @@
 
 
 
+    <script src="index.js"></script>
 
 </body>
 

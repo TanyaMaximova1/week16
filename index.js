@@ -2,7 +2,20 @@
 let result;
 let img_link;
 function replaceName() {
-    let fio = document.getElementById('fio').value; //строка на входе
+    // document.getElementById('yourName').style.visibility = "hidden";
+
+    let fio;
+
+    if (fio == undefined) {
+        console.log("Noooooo");
+        document.getElementById('yourName').value = "username";
+        document.getElementById('yourName').style.visibility = "visible";
+    } else {
+
+    }
+
+    fio = document.getElementById('fio').value; //строка на входе
+
     let mass_fio = fio.split(' '); //разделение по пробелам
     console.log(mass_fio); //вывод массива
 
@@ -33,43 +46,22 @@ function replaceName() {
     document.getElementById('yourName').readOnly = true;
 
     function image() {
-        // img_link = document.getElementById('img_link').value; //ссылка на изображение
-        // document.getElementById('img').src = img_link;
-        // document.getElementById('img_link').value;
+        img_link = document.getElementById('img_link').value; //ссылка на изображение
+        document.getElementById('img').src = img_link;
+        document.getElementById('img_link').value;
 
-        if (img_link = '') {
-            // let pics = ['https://i.pinimg.com/originals/fc/b2/ff/fcb2ffd51991274e1e39d765aa60c1a9.png', 'https://www.clipartmax.com/png/full/257-2574168_rainbow-dash-rainbow-dash-starring-by-illumnious-on-rainbow-dash.png'];
+        if (img_link == '') {
+            var a = Math.round(Math.random() * 6) //цикл с рандомными аватарками
+            image = [];
+            image[0] = "image/1.png"
+            image[1] = "image/2.png"
+            image[2] = "image/3.png"
+            image[3] = "image/4.png"
+            image[4] = "image/5.png"
+            image[5] = "image/6.png"
+            let nowImage = image[a];
 
-            // function showImage() {
-            //     var a = Math.floor(Math.random() * pics.length);
-            //     var image = pics[a];
-            //     document.getElementById('img').src = image;
-            // }
-            // showImage();
-
-            // var a = Math.round(Math.random() * 6)
-            // image = [];
-            // image[0] = "image/1.png"
-            // image[1] = "image/2.png"
-            // image[2] = "image/3.png"
-            // image[3] = "image/4.png"
-            // image[4] = "image/5.png"
-            // image[5] = "image/6.png"
-            // let nowImage = image[a];
-
-            // let nowImage.src = 'https://i.pinimg.com/originals/fc/b2/ff/fcb2ffd51991274e1e39d765aa60c1a9.png';
-            // document.getElementById('img').src = nowImage;
-            // document.write("<img src=" + image[a] + ">");
-
-            var SRC = "image/1.png";
-            var img = new Image;
-            img.src = SRC;
-            document.write('<img src="' + SRC + '" id="img1">');
-        }
-        else {
-            img_link = document.getElementById('img_link').value; //ссылка на изображение
-            document.getElementById('img').src = img_link;
-            document.getElementById('img_link').value;
+            document.getElementById('img').src = nowImage;
         }
     }
     image();

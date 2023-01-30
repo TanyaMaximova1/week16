@@ -4,7 +4,8 @@
 
 h2,
 h3,
-p {
+p,
+.input_check {
     color: rgb(255, 255, 255);
 }
 

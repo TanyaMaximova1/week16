@@ -45,6 +45,13 @@ function replaceName() {
     document.getElementById('yourName').value = result;
     document.getElementById('yourName').readOnly = true;
 
+    //проверка какой из вариантов нажат "Да" или "Нет"
+    if (document.getElementById('no').checked) {
+        document.getElementById('yourName').style.visibility = "hidden";
+    } else {
+        document.getElementById('yourName').style.visibility = "visible";
+    }
+
     function image() {
         img_link = document.getElementById('img_link').value; //ссылка на изображение
         document.getElementById('img').src = img_link;
@@ -97,45 +104,10 @@ function replaceName() {
         }
 
         document.getElementById('date_comment').innerHTML = `${day}` + "." + `${month}` + "." + `${year}` + " " + `${time}` + ":" + `${minute}` + ":" + `${sec}`;
-
     }
     checkSpam();
 }
 replaceName();
-
-
-
-
-// function checkName() {
-//     if (document.getElementById('no').value = true) {
-//     }
-// }
-// }
-
-// function randomAvatar() {
-//     if (img_link == ' ') {
-//         // let pics = ['https://i.pinimg.com/originals/fc/b2/ff/fcb2ffd51991274e1e39d765aa60c1a9.png', 'https://www.clipartmax.com/png/full/257-2574168_rainbow-dash-rainbow-dash-starring-by-illumnious-on-rainbow-dash.png'];
-
-//         // function showImage() {
-//         //     var a = Math.floor(Math.random() * pics.length);
-//         //     var image = pics[a];
-//         //     document.getElementById('img').src = image;
-//         // }
-//         // showImage();
-
-//         var a = Math.round(Math.random() * 6)
-//         image = [];
-//         image[0] = "image/1.png"
-//         image[1] = "image/2.png"
-//         image[2] = "image/3.png"
-//         image[3] = "image/4.png"
-//         image[4] = "image/4.png"
-//         image[5] = "image/4.png"
-//         // document.getElementById('img').src = image[a];
-//         document.write("<img src=" + image[a] + ">");
-//     }
-// }
-// randomAvatar();
 
 function clean() {
     fio = document.getElementById('fio').value = ""; //отчистить поле ввода

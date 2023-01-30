@@ -2,45 +2,42 @@
 let result;
 let img_link;
 function replaceName() {
-    // document.getElementById('yourName').style.visibility = "hidden";
+    document.getElementById('yourName').style.visibility = "hidden";
 
     let fio;
+    fio = document.getElementById('fio').value; //строка на входе
 
-    if (fio == undefined) {
+    if (document.getElementById('fio').value == '') {
         console.log("Noooooo");
         document.getElementById('yourName').value = "username";
         document.getElementById('yourName').style.visibility = "visible";
     } else {
+        let mass_fio = fio.split(' '); //разделение по пробелам
+        console.log(mass_fio); //вывод массива
 
+        let firstWord = mass_fio[0]; //переменная в которую записывается первое слово
+        let secondWord = mass_fio[1]; //переменная в которую записывается второе слово
+        let thirdWord = mass_fio[2]; //переменная в которую записывается третье слово
+
+        firstWord = firstWord.toLowerCase();
+        secondWord = secondWord.toLowerCase();
+        thirdWord = thirdWord.toLowerCase();
+
+        let firstWordfirstLetter = firstWord[0].toUpperCase();
+        firstWord = firstWord.replace(firstWord[0], firstWordfirstLetter);
+        console.log(firstWord);
+
+        let secondWordfirstLetter = secondWord[0].toUpperCase();
+        secondWord = secondWord.replace(secondWord[0], secondWordfirstLetter);
+        console.log(secondWord);
+
+        let thirdWordfirstLetter = thirdWord[0].toUpperCase();
+        thirdWord = thirdWord.replace(thirdWord[0], thirdWordfirstLetter);
+        console.log(thirdWord);
+
+        result = `${firstWord} ${secondWord} ${thirdWord}`;
+        document.getElementById('fio').value = result;
     }
-
-    fio = document.getElementById('fio').value; //строка на входе
-
-    let mass_fio = fio.split(' '); //разделение по пробелам
-    console.log(mass_fio); //вывод массива
-
-    let firstWord = mass_fio[0]; //переменная в которую записывается первое слово
-    let secondWord = mass_fio[1]; //переменная в которую записывается второе слово
-    let thirdWord = mass_fio[2]; //переменная в которую записывается третье слово
-
-    firstWord = firstWord.toLowerCase();
-    secondWord = secondWord.toLowerCase();
-    thirdWord = thirdWord.toLowerCase();
-
-    let firstWordfirstLetter = firstWord[0].toUpperCase();
-    firstWord = firstWord.replace(firstWord[0], firstWordfirstLetter);
-    console.log(firstWord);
-
-    let secondWordfirstLetter = secondWord[0].toUpperCase();
-    secondWord = secondWord.replace(secondWord[0], secondWordfirstLetter);
-    console.log(secondWord);
-
-    let thirdWordfirstLetter = thirdWord[0].toUpperCase();
-    thirdWord = thirdWord.replace(thirdWord[0], thirdWordfirstLetter);
-    console.log(thirdWord);
-
-    result = `${firstWord} ${secondWord} ${thirdWord}`;
-    document.getElementById('fio').value = result;
 
     document.getElementById('yourName').value = result;
     document.getElementById('yourName').readOnly = true;
@@ -110,9 +107,13 @@ function replaceName() {
 replaceName();
 
 function clean() {
-    fio = document.getElementById('fio').value = ""; //отчистить поле ввода
+    fio = document.getElementById('fio').value = "";
     img_link = document.getElementById('img_link').value = ""; //отчистить поле ввода
     comment = document.getElementById('comment').value = ""; //отчистить поле ввода
+    document.getElementById('cleanCcomment').value = "";
+    document.getElementById('yourName').value = "";
+    document.getElementById('date_comment').innerHTML = "";
+    document.getElementById('img').src = "";
 }
 clean();
 

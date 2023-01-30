@@ -85,10 +85,18 @@ function replaceName() {
         }
 
         let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth();
+        let day = date.getDate();
         let time = date.getHours();
         let minute = date.getMinutes();
         let sec = date.getSeconds();
-        document.getElementById('date_comment').innerHTML = `${time}` + ":" + `${minute}` + ":" + `${sec}`;
+
+        if (sec < 10) {
+            sec = 0 + `${sec}`
+        }
+
+        document.getElementById('date_comment').innerHTML = `${day}` + "." + `${month}` + "." + `${year}` + " " + `${time}` + ":" + `${minute}` + ":" + `${sec}`;
 
     }
     checkSpam();
